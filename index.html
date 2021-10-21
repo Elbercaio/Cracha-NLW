@@ -17,37 +17,67 @@
         <div class="avatar">
           <span><img src="img/build.svg" alt="Selo RocketSeat" /></span>
 
-          <img src="img/foto.jfif" alt="Foto pessoal" width="185" />
-        </div>
-        <h1>Elber Caio</h1>
-        <a href="https://github.com/Elbercaio"
-          ><img
-            src="img/github.svg"
-            class="media-object img-responsive img-thumbnail"
+          <img
+            class="photo"
+            src="img/foto.jfif"
+            alt="Foto pessoal"
+            width="185"
           />
-          Elbercaio</a
+        </div>
+        <h1 id="username">Elber Caio</h1>
+        <a id="github" href="https://github.com/Elbercaio" target="_blank"
+          ><img src="img/github.svg" target="_blank" /> Elbercaio</a
         >
         <p>Iniciante em programaçao em busca de conhecimento</p>
       </div>
-      <ul>
-        <li>
+      <ul id="links">
+        <li class="linkedin">
           <a
             href="https://www.linkedin.com/in/elber-caio-anthony-cadete-lopes-a1a356162/"
-            ><img
-              src="img/linkedin.svg"
-              class="media-object img-responsive img-thumbnail"
-              width="48"
+            target="_blank"
+            ><img class="image_link" src="img/linkedin.svg"
           /></a>
         </li>
-        <li>
-          <a href="https://www.instagram.com/elbs2246/"
-            ><img
-              src="img/instagram.svg"
-              class="media-object img-responsive img-thumbnail"
-              width="48"
+        <li class="instagram">
+          <a
+            class="link"
+            href="https://www.instagram.com/elbs2246/"
+            target="_blank"
+            ><img class="image_link" src="img/instagram.svg"
+          /></a>
+        </li>
+        <li class="email">
+          <a class="link" href="mailto:elbercaio@gmail.com"
+            ><img class="image_link" src="img/email.svg"
           /></a>
         </li>
       </ul>
     </main>
+    <script>
+        const user = {
+          image: 'img/foto.jfif',
+          name: 'Elber Caio',
+          github: 'Elbercaio',
+          linkedin: 'in/elber-caio-anthony-cadete-lopes-a1a356162',
+          instagram: 'elbs2246',
+          email: "elbercaio@gmail.com"
+      }
+      function change_user_info(user){
+        username.textContent = user.name;
+        photo.src = user.image; \\ not working
+        github.href = `https://www.github.com/${user.github}`;
+        github.innerHTML = `${user.github}` \\ not working
+        for (let li of links.children) {
+          const social_media = li.getAttribute('class');
+          if (social_media != 'email') {
+            li.children[0].href = `https://www.${social_media}.com/${user.[social_media]}`
+          }
+          else {
+              li.children[0].href = `mailto:${user.[social_media]}`
+            }
+        }
+      }
+      change_user_info(user)
+    </script>
   </body>
 </html>
