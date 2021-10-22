@@ -11,8 +11,7 @@ body {
 }
 
 body {
-  background-image: url("img/background_image.jpg");
-  background-size: 100%;
+  background-image: url("img/background_image.svg");
   display: grid;
   font-family: "Roboto", sans-serif;
   place-items: center;
