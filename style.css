@@ -11,6 +11,8 @@ body {
 }
 
 body {
+  background-image: url("img/background_image.jpg");
+  background-size: 100%;
   display: grid;
   font-family: "Roboto", sans-serif;
   place-items: center;
